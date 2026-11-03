@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a0f3a">
+    <title>Chúc mừng sinh nhật chị Sandra Nhung Bùi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Dancing+Script:wght@600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" type="text/javascript" defer></script>
+</head>
+<body class="not-loaded">
+    <!-- Shared flower shapes -->
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+        <defs>
+            <symbol id="flower" viewBox="-50 -50 100 100">
+                <g style="fill:var(--c, #ff8fbf)">
+                    <ellipse cx="0" cy="-24" rx="16" ry="24" transform="rotate(0)"/>
+                    <ellipse cx="0" cy="-24" rx="16" ry="24" transform="rotate(72)"/>
+                    <ellipse cx="0" cy="-24" rx="16" ry="24" transform="rotate(144)"/>
+                    <ellipse cx="0" cy="-24" rx="16" ry="24" transform="rotate(216)"/>
+                    <ellipse cx="0" cy="-24" rx="16" ry="24" transform="rotate(288)"/>
+                </g>
+                <g style="fill:var(--c2, #ffe1ee)" opacity="0.85">
+                    <ellipse cx="0" cy="-14" rx="9" ry="14" transform="rotate(36)"/>
+                    <ellipse cx="0" cy="-14" rx="9" ry="14" transform="rotate(108)"/>
+                    <ellipse cx="0" cy="-14" rx="9" ry="14" transform="rotate(180)"/>
+                    <ellipse cx="0" cy="-14" rx="9" ry="14" transform="rotate(252)"/>
+                    <ellipse cx="0" cy="-14" rx="9" ry="14" transform="rotate(324)"/>
+                </g>
+                <circle r="10" fill="#ffd36e"/>
+                <g fill="#f4a340"><circle cx="-4" cy="-3" r="1.8"/><circle cx="4" cy="-3" r="1.8"/><circle cy="4" r="1.8"/><circle cx="-5.5" cy="2.5" r="1.4"/><circle cx="5.5" cy="2.5" r="1.4"/></g>
+            </symbol>
+            <symbol id="petal" viewBox="-10 -10 20 20">
+                <path d="M0,9 C-9,4 -9,-7 -3,-9 L0,-6.5 L3,-9 C9,-7 9,4 0,9 Z"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- Background -->
+    <div class="sky" aria-hidden="true">
+        <span class="shooting-star" style="--top:8%;  --left:78%; --delay:2s;  --dur:9s"></span>
+        <span class="shooting-star" style="--top:18%; --left:42%; --delay:6s;  --dur:12s"></span>
+        <span class="shooting-star" style="--top:4%;  --left:30%; --delay:10s; --dur:14s"></span>
+    </div>
+    <canvas class="blooms" aria-hidden="true"></canvas>
+    <canvas class="petals" aria-hidden="true"></canvas>
+
+    <!-- Flower garland -->
+    <svg class="bunting" viewBox="0 0 1200 240" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+        <path class="bunting__string" d="M-20,14 Q600,120 1220,14"/>
+        <circle class="garland__bud" cx="-20" cy="17" r="5" style="fill:#ffb7d5"/>
+        <circle class="garland__bud" cx="62.7" cy="30.2" r="5" style="fill:#ffd1e3"/>
+        <circle class="garland__bud" cx="145.3" cy="41.5" r="5" style="fill:#e9b8ff"/>
+        <circle class="garland__bud" cx="228" cy="50.9" r="5" style="fill:#ffc4a8"/>
+        <circle class="garland__bud" cx="310.7" cy="58.5" r="5" style="fill:#ffb7d5"/>
+        <circle class="garland__bud" cx="393.3" cy="64.1" r="5" style="fill:#ffd1e3"/>
+        <circle class="garland__bud" cx="476" cy="67.9" r="5" style="fill:#e9b8ff"/>
+        <circle class="garland__bud" cx="558.7" cy="69.8" r="5" style="fill:#ffc4a8"/>
+        <circle class="garland__bud" cx="641.3" cy="69.8" r="5" style="fill:#ffb7d5"/>
+        <circle class="garland__bud" cx="724" cy="67.9" r="5" style="fill:#ffd1e3"/>
+        <circle class="garland__bud" cx="806.7" cy="64.1" r="5" style="fill:#e9b8ff"/>
+        <circle class="garland__bud" cx="889.3" cy="58.5" r="5" style="fill:#ffc4a8"/>
+        <circle class="garland__bud" cx="972" cy="50.9" r="5" style="fill:#ffb7d5"/>
+        <circle class="garland__bud" cx="1054.7" cy="41.5" r="5" style="fill:#ffd1e3"/>
+        <circle class="garland__bud" cx="1137.3" cy="30.2" r="5" style="fill:#e9b8ff"/>
+        <circle class="garland__bud" cx="1220" cy="17" r="5" style="fill:#ffc4a8"/>
+        <g class="garland__flower" style="--i:0;--c:#ff8fbf;--c2:#ffe1ee"><ellipse cx="6.3" cy="24.8" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 6.3 24.8)"/><ellipse cx="36.3" cy="24.8" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 36.3 24.8)"/><use href="#flower" x="-0.7" y="3.8" width="44" height="44"/></g>
+        <g class="garland__flower" style="--i:1;--c:#fff0f6;--c2:#ffb7d5"><ellipse cx="89" cy="37.1" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 89 37.1)"/><ellipse cx="119" cy="37.1" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 119 37.1)"/><use href="#flower" x="88" y="22.1" width="32" height="32"/></g>
+        <g class="garland__flower" style="--i:2;--c:#ffc4a8;--c2:#fff1e6"><ellipse cx="171.7" cy="47.4" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 171.7 47.4)"/><ellipse cx="201.7" cy="47.4" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 201.7 47.4)"/><use href="#flower" x="164.7" y="26.4" width="44" height="44"/></g>
+        <g class="garland__flower" style="--i:3;--c:#e9b8ff;--c2:#fbefff"><ellipse cx="254.3" cy="55.9" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 254.3 55.9)"/><ellipse cx="284.3" cy="55.9" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 284.3 55.9)"/><use href="#flower" x="253.3" y="40.9" width="32" height="32"/></g>
+        <g class="garland__flower" style="--i:4;--c:#ff6fae;--c2:#ffd1e3"><ellipse cx="337" cy="62.5" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 337 62.5)"/><ellipse cx="367" cy="62.5" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 367 62.5)"/><use href="#flower" x="330" y="41.5" width="44" height="44"/></g>
+        <g class="garland__flower" style="--i:5;--c:#ff8fbf;--c2:#ffe1ee"><ellipse cx="419.7" cy="67.2" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 419.7 67.2)"/><ellipse cx="449.7" cy="67.2" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 449.7 67.2)"/><use href="#flower" x="418.7" y="52.2" width="32" height="32"/></g>
+        <g class="garland__flower" style="--i:6;--c:#fff0f6;--c2:#ffb7d5"><ellipse cx="502.3" cy="70.1" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 502.3 70.1)"/><ellipse cx="532.3" cy="70.1" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 532.3 70.1)"/><use href="#flower" x="495.3" y="49.1" width="44" height="44"/></g>
+        <g class="garland__flower" style="--i:7;--c:#ffc4a8;--c2:#fff1e6"><ellipse cx="585" cy="71" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 585 71)"/><ellipse cx="615" cy="71" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 615 71)"/><use href="#flower" x="584" y="56" width="32" height="32"/></g>
+        <g class="garland__flower" style="--i:8;--c:#e9b8ff;--c2:#fbefff"><ellipse cx="667.7" cy="70.1" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 667.7 70.1)"/><ellipse cx="697.7" cy="70.1" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 697.7 70.1)"/><use href="#flower" x="660.7" y="49.1" width="44" height="44"/></g>
+        <g class="garland__flower" style="--i:9;--c:#ff6fae;--c2:#ffd1e3"><ellipse cx="750.3" cy="67.2" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 750.3 67.2)"/><ellipse cx="780.3" cy="67.2" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 780.3 67.2)"/><use href="#flower" x="749.3" y="52.2" width="32" height="32"/></g>
+        <g class="garland__flower" style="--i:10;--c:#ff8fbf;--c2:#ffe1ee"><ellipse cx="833" cy="62.5" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 833 62.5)"/><ellipse cx="863" cy="62.5" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 863 62.5)"/><use href="#flower" x="826" y="41.5" width="44" height="44"/></g>
+        <g class="garland__flower" style="--i:11;--c:#fff0f6;--c2:#ffb7d5"><ellipse cx="915.7" cy="55.9" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 915.7 55.9)"/><ellipse cx="945.7" cy="55.9" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 945.7 55.9)"/><use href="#flower" x="914.7" y="40.9" width="32" height="32"/></g>
+        <g class="garland__flower" style="--i:12;--c:#ffc4a8;--c2:#fff1e6"><ellipse cx="998.3" cy="47.4" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 998.3 47.4)"/><ellipse cx="1028.3" cy="47.4" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 1028.3 47.4)"/><use href="#flower" x="991.3" y="26.4" width="44" height="44"/></g>
+        <g class="garland__flower" style="--i:13;--c:#e9b8ff;--c2:#fbefff"><ellipse cx="1081" cy="37.1" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 1081 37.1)"/><ellipse cx="1111" cy="37.1" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 1111 37.1)"/><use href="#flower" x="1080" y="22.1" width="32" height="32"/></g>
+        <g class="garland__flower" style="--i:14;--c:#ff6fae;--c2:#ffd1e3"><ellipse cx="1163.7" cy="24.8" rx="11" ry="4.5" fill="#5fbf8f" transform="rotate(-28 1163.7 24.8)"/><ellipse cx="1193.7" cy="24.8" rx="11" ry="4.5" fill="#3f9f72" transform="rotate(28 1193.7 24.8)"/><use href="#flower" x="1156.7" y="3.8" width="44" height="44"/></g>
+    </svg>
+
+    <!-- Floating blossoms -->
+    <div class="blossoms" aria-hidden="true">
+        <div class="blossom" style="--c:#ff8fbf; --c2:#ffe1ee; --x:4%; --y:22%; --scale:1; --d:0.2s; --bob:6s"><svg viewBox="-50 -50 100 100"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg></div>
+        <div class="blossom" style="--c:#fff0f6; --c2:#ffb7d5; --x:12%; --y:36%; --scale:0.75; --d:0.6s; --bob:7s"><svg viewBox="-50 -50 100 100"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg></div>
+        <div class="blossom" style="--c:#e9b8ff; --c2:#fbefff; --x:3%; --y:52%; --scale:0.9; --d:1s; --bob:6.5s"><svg viewBox="-50 -50 100 100"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg></div>
+        <div class="blossom" style="--c:#ffc4a8; --c2:#fff1e6; --x:86%; --y:20%; --scale:0.95; --d:0.4s; --bob:6.8s"><svg viewBox="-50 -50 100 100"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg></div>
+        <div class="blossom" style="--c:#ff6fae; --c2:#ffd1e3; --x:93%; --y:36%; --scale:0.75; --d:0.8s; --bob:5.6s"><svg viewBox="-50 -50 100 100"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg></div>
+        <div class="blossom" style="--c:#ffb7d5; --c2:#ffffff; --x:84%; --y:52%; --scale:1; --d:1.2s; --bob:7.4s"><svg viewBox="-50 -50 100 100"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg></div>
+    </div>
+
+    <main class="stage">
+        <header class="hero">
+            <svg class="sparkle sparkle--1" viewBox="-50 -50 100 100" aria-hidden="true" style="--c:#ffb7d5;--c2:#ffffff"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg>
+            <svg class="sparkle sparkle--2" viewBox="-50 -50 100 100" aria-hidden="true" style="--c:#e9b8ff;--c2:#fbefff"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg>
+            <svg class="sparkle sparkle--3" viewBox="-50 -50 100 100" aria-hidden="true" style="--c:#ffc4a8;--c2:#fff1e6"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg>
+            <svg class="sparkle sparkle--4" viewBox="-50 -50 100 100" aria-hidden="true" style="--c:#fff0f6;--c2:#ff8fbf"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg>
+            <h1 class="title">
+                <span class="title__line">Chúc mừng sinh nhật chị</span>
+                <span class="title__name">Sandra Nhung Bùi</span>
+            </h1>
+            <p class="tagline"><span class="tagline__text">Hôm nay là ngày đặc biệt nhất trong năm của chị Sandra</span></p>
+        </header>
+
+        <!-- Cake -->
+        <div class="cake-wrap">
+        <svg class="cake" viewBox="0 40 400 350" overflow="visible" role="img" aria-label="Bánh kem sinh nhật ba tầng với năm ngọn nến">
+            <defs>
+                <linearGradient id="g-t1" x1="0" x2="1">
+                    <stop offset="0" stop-color="#b8326f"/>
+                    <stop offset="0.35" stop-color="#ff7eb6"/>
+                    <stop offset="0.5" stop-color="#ff9cc8"/>
+                    <stop offset="0.8" stop-color="#e8569a"/>
+                    <stop offset="1" stop-color="#a62a63"/>
+                </linearGradient>
+                <linearGradient id="g-t2" x1="0" x2="1">
+                    <stop offset="0" stop-color="#5d42c2"/>
+                    <stop offset="0.35" stop-color="#a48bff"/>
+                    <stop offset="0.5" stop-color="#bfaeff"/>
+                    <stop offset="0.8" stop-color="#8f73f0"/>
+                    <stop offset="1" stop-color="#5338b3"/>
+                </linearGradient>
+                <linearGradient id="g-t3" x1="0" x2="1">
+                    <stop offset="0" stop-color="#d6a865"/>
+                    <stop offset="0.35" stop-color="#ffe6bf"/>
+                    <stop offset="0.5" stop-color="#fff1d9"/>
+                    <stop offset="0.8" stop-color="#f6d39b"/>
+                    <stop offset="1" stop-color="#c99752"/>
+                </linearGradient>
+                <linearGradient id="g-plate" x1="0" x2="1">
+                    <stop offset="0" stop-color="#b9b2d9"/>
+                    <stop offset="0.45" stop-color="#ffffff"/>
+                    <stop offset="1" stop-color="#a59cc9"/>
+                </linearGradient>
+                <radialGradient id="g-halo">
+                    <stop offset="0" stop-color="#ffd36e" stop-opacity="0.55"/>
+                    <stop offset="1" stop-color="#ffd36e" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="g-flame-glow">
+                    <stop offset="0" stop-color="#fff2b3" stop-opacity="0.9"/>
+                    <stop offset="0.4" stop-color="#ffb347" stop-opacity="0.35"/>
+                    <stop offset="1" stop-color="#ff8a3d" stop-opacity="0"/>
+                </radialGradient>
+                <pattern id="p-stripes" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
+                    <rect width="4" height="9" fill="#fff" fill-opacity="0.75"/>
+                </pattern>
+            </defs>
+
+            <ellipse class="cake__halo" cx="200" cy="120" rx="190" ry="150" fill="url(#g-halo)"/>
+
+            <!-- Plate -->
+            <ellipse cx="200" cy="378" rx="176" ry="16" fill="#000" fill-opacity="0.35"/>
+            <ellipse cx="200" cy="362" rx="190" ry="30" fill="url(#g-plate)"/>
+            <ellipse cx="200" cy="356" rx="180" ry="25" fill="#f7f4ff"/>
+
+            <!-- t1 -->
+            <g class="tier tier--t1">
+            <path class="tier__body" d="M40,262 L40,350 A160,28 0 0 0 360,350 L360,262 Z"/>
+            <ellipse class="tier__top" cx="200" cy="262" rx="160" ry="28"/>
+            <g class="sprinkles"><rect x="90.8" y="328.2" width="8" height="3" rx="1.5" style="fill:var(--mint)" transform="rotate(127 94.8 329.7)"/><rect x="216.3" y="335.8" width="8" height="3" rx="1.5" style="fill:var(--sky)" transform="rotate(143.8 220.3 337.3)"/><rect x="141.2" y="336.6" width="8" height="3" rx="1.5" style="fill:var(--sky)" transform="rotate(116.4 145.2 338.1)"/><rect x="256.9" y="357.8" width="8" height="3" rx="1.5" style="fill:#fff" transform="rotate(166 260.9 359.3)"/><rect x="211.3" y="346.5" width="8" height="3" rx="1.5" style="fill:var(--gold)" transform="rotate(29.6 215.3 348)"/><rect x="248.2" y="360.9" width="8" height="3" rx="1.5" style="fill:#fff" transform="rotate(104.5 252.2 362.4)"/><rect x="120.1" y="356.5" width="8" height="3" rx="1.5" style="fill:var(--mint)" transform="rotate(9.3 124.1 358)"/><rect x="178.5" y="362.1" width="8" height="3" rx="1.5" style="fill:var(--gold)" transform="rotate(151.1 182.5 363.6)"/><rect x="274.1" y="339.2" width="8" height="3" rx="1.5" style="fill:#fff" transform="rotate(145.8 278.1 340.7)"/><rect x="243.4" y="344.5" width="8" height="3" rx="1.5" style="fill:var(--gold)" transform="rotate(82.3 247.4 346)"/><rect x="288.4" y="334" width="8" height="3" rx="1.5" style="fill:var(--sky)" transform="rotate(168.9 292.4 335.5)"/><rect x="150.2" y="335.4" width="8" height="3" rx="1.5" style="fill:var(--gold)" transform="rotate(134.5 154.2 336.9)"/><rect x="150" y="351.3" width="8" height="3" rx="1.5" style="fill:#fff" transform="rotate(172.1 154 352.8)"/><rect x="241" y="355.4" width="8" height="3" rx="1.5" style="fill:var(--sky)" transform="rotate(35 245 356.9)"/><rect x="197.8" y="334.8" width="8" height="3" rx="1.5" style="fill:var(--sky)" transform="rotate(4.3 201.8 336.3)"/><rect x="305" y="352" width="8" height="3" rx="1.5" style="fill:var(--lavender)" transform="rotate(157.5 309 353.5)"/><rect x="134.1" y="343.2" width="8" height="3" rx="1.5" style="fill:var(--mint)" transform="rotate(39.2 138.1 344.7)"/><rect x="294.8" y="331.2" width="8" height="3" rx="1.5" style="fill:var(--lavender)" transform="rotate(22.6 298.8 332.7)"/><rect x="302.3" y="345.6" width="8" height="3" rx="1.5" style="fill:var(--gold)" transform="rotate(80.7 306.3 347.1)"/><rect x="107.6" y="352.6" width="8" height="3" rx="1.5" style="fill:var(--gold)" transform="rotate(56 111.6 354.1)"/><rect x="308.5" y="334.7" width="8" height="3" rx="1.5" style="fill:#fff" transform="rotate(65.6 312.5 336.2)"/><rect x="98" y="348.9" width="8" height="3" rx="1.5" style="fill:var(--gold)" transform="rotate(0.9 102 350.4)"/><rect x="300.2" y="338.2" width="8" height="3" rx="1.5" style="fill:var(--lavender)" transform="rotate(174.6 304.2 339.7)"/><rect x="328.1" y="347.5" width="8" height="3" rx="1.5" style="fill:var(--gold)" transform="rotate(145.8 332.1 349)"/><rect x="217.4" y="340.2" width="8" height="3" rx="1.5" style="fill:var(--sky)" transform="rotate(165.2 221.4 341.7)"/><rect x="77.7" y="346.4" width="8" height="3" rx="1.5" style="fill:#fff" transform="rotate(112 81.7 347.9)"/><rect x="255.1" y="337.5" width="8" height="3" rx="1.5" style="fill:var(--gold)" transform="rotate(52.9 259.1 339)"/><rect x="59.1" y="348.6" width="8" height="3" rx="1.5" style="fill:var(--mint)" transform="rotate(38 63.1 350.1)"/><rect x="228.5" y="345.3" width="8" height="3" rx="1.5" style="fill:var(--sky)" transform="rotate(108.2 232.5 346.8)"/><rect x="291.6" y="351.1" width="8" height="3" rx="1.5" style="fill:var(--mint)" transform="rotate(79.7 295.6 352.6)"/></g>
+            <path class="tier__icing" d="M40,262 A160,28 0 0 1 360,262 L360,274 L358,278.4 L356,280.2 L354,281.6 L352,282.7 L350,283.7 L348,284.6 L346,285.5 L344,286.2 L342,286.9 L340,290.6 L338,294.1 L336,296.2 L334,297.7 L332,298.8 L330,299.6 L328,300 L326,300.2 L324,300 L322,299.3 L320,298.1 L318,294.9 L316,293.3 L314,293.6 L312,294 L310,300.5 L308,308.3 L306,312.1 L304,314.3 L302,315.4 L300,315.5 L298,314.4 L296,312.1 L294,307.6 L292,296.9 L290,297.2 L288,297.4 L286,298.3 L284,301.8 L282,303.3 L280,304.3 L278,304.9 L276,305.3 L274,305.5 L272,305.4 L270,305.1 L268,304.4 L266,303.1 L264,307.1 L262,310.9 L260,313.2 L258,314.7 L256,315.7 L254,316.2 L252,316.2 L250,315.8 L248,314.9 L246,313.3 L244,310.8 L242,306.1 L240,301.1 L238,308 L236,312 L234,314.2 L232,315.5 L230,316 L228,316 L226,315.2 L224,313.7 L222,311 L220,304.9 L218,301.8 L216,301.9 L214,301.9 L212,301.9 L210,301.9 L208,306.5 L206,310.7 L204,312.8 L202,313.9 L200,314.3 L198,314.1 L196,313.3 L194,311.7 L192,308.7 L190,301.9 L188,301.9 L186,301.9 L184,301.9 L182,301.8 L180,307.3 L178,317.8 L176,322.4 L174,325 L172,326.3 L170,326.4 L168,325.5 L166,323.2 L164,319.3 L162,312.1 L160,301.1 L158,301 L156,300.9 L154,312.3 L152,319.3 L150,323 L148,325.2 L146,326.1 L144,326 L142,324.8 L140,322.4 L138,318.4 L136,318.3 L134,311 L132,313.4 L130,314.9 L128,315.8 L126,316.2 L124,316.1 L122,315.5 L120,314.4 L118,312.7 L116,310.2 L114,306.4 L112,297.4 L110,297.2 L108,296.9 L106,307.7 L104,311.5 L102,313.5 L100,314.3 L98,314.3 L96,313.3 L94,311.3 L92,308 L90,301.9 L88,294 L86,293.6 L84,293.3 L82,304.3 L80,308.3 L78,310.6 L76,311.9 L74,312.4 L72,312.1 L70,311.2 L68,309.6 L66,307.1 L64,303.3 L62,297.3 L60,287.6 L58,286.9 L56,286.2 L54,285.5 L52,284.6 L50,283.7 L48,282.7 L46,281.6 L44,280.2 L42,278.4 L40,274 Z"/>
+            <ellipse class="tier__shine" cx="181" cy="259" rx="99" ry="12"/>
+            <g class="pearls"><circle cx="357.2" cy="351.9" r="5.5"/><circle cx="351.9" cy="355.5" r="5.5"/><circle cx="343.9" cy="358.9" r="5.5"/><circle cx="333.5" cy="362.1" r="5.5"/><circle cx="320.8" cy="365.1" r="5.5"/><circle cx="306" cy="367.7" r="5.5"/><circle cx="289.3" cy="369.9" r="5.5"/><circle cx="271.1" cy="371.8" r="5.5"/><circle cx="251.7" cy="373.2" r="5.5"/><circle cx="231.4" cy="374.2" r="5.5"/><circle cx="210.5" cy="374.6" r="5.5"/><circle cx="189.5" cy="374.6" r="5.5"/><circle cx="168.6" cy="374.2" r="5.5"/><circle cx="148.3" cy="373.2" r="5.5"/><circle cx="128.9" cy="371.8" r="5.5"/><circle cx="110.7" cy="369.9" r="5.5"/><circle cx="94" cy="367.7" r="5.5"/><circle cx="79.2" cy="365.1" r="5.5"/><circle cx="66.5" cy="362.1" r="5.5"/><circle cx="56.1" cy="358.9" r="5.5"/><circle cx="48.1" cy="355.5" r="5.5"/><circle cx="42.8" cy="351.9" r="5.5"/></g>
+            </g>
+            <!-- t2 -->
+            <g class="tier tier--t2">
+            <path class="tier__body" d="M82,190 L82,262 A118,21 0 0 0 318,262 L318,190 Z"/>
+            <ellipse class="tier__top" cx="200" cy="190" rx="118" ry="21"/>
+            <path class="tier__icing" d="M82,190 A118,21 0 0 1 318,190 L318,200 L316,203.8 L314,205.4 L312,206.6 L310,207.6 L308,208.5 L306,209.2 L304,209.9 L302,210.6 L300,213.1 L298,218.2 L296,220.6 L294,222.2 L292,223.3 L290,223.8 L288,223.9 L286,223.5 L284,222.4 L282,220.2 L280,215.4 L278,215.8 L276,220.6 L274,228.3 L272,231.6 L270,233.3 L268,233.7 L266,232.9 L264,230.7 L262,225.5 L260,218.1 L258,218.3 L256,221.7 L254,224.1 L252,225.3 L250,225.8 L248,225.7 L246,225.1 L244,223.4 L242,219.6 L240,219.8 L238,219.9 L236,220 L234,220.1 L232,220.2 L230,220.3 L228,220.4 L226,224.4 L224,226 L222,226.8 L220,227.1 L218,226.9 L216,226.2 L214,224.7 L212,222.9 L210,226.5 L208,228 L206,228.8 L204,229.1 L202,228.9 L200,228.1 L198,226.7 L196,223.5 L194,221 L192,221 L190,220.9 L188,220.9 L186,220.9 L184,225 L182,227.5 L180,228.8 L178,229.6 L176,229.9 L174,229.8 L172,229.4 L170,228.5 L168,227 L166,224.5 L164,220 L162,231.1 L160,235.3 L158,237.2 L156,237.5 L154,236.6 L152,234 L150,228.7 L148,218.9 L146,218.7 L144,218.5 L142,218.3 L140,218.1 L138,217.9 L136,222.9 L134,229.5 L132,232.3 L130,233.6 L128,233.6 L126,232.6 L124,230.3 L122,226.1 L120,215.4 L118,215.1 L116,223.7 L114,228.3 L112,230.4 L110,231.2 L108,231 L106,229.7 L104,227.2 L102,222.8 L100,211.1 L98,210.6 L96,209.9 L94,209.2 L92,208.5 L90,207.6 L88,206.6 L86,205.4 L84,203.8 L82,200 Z"/>
+            <ellipse class="tier__shine" cx="186" cy="187" rx="73" ry="9"/>
+            <g class="pearls"><circle cx="315.9" cy="263.2" r="4.5"/><circle cx="310.4" cy="266.7" r="4.5"/><circle cx="301.6" cy="270" r="4.5"/><circle cx="289.7" cy="272.9" r="4.5"/><circle cx="275.2" cy="275.5" r="4.5"/><circle cx="258.5" cy="277.5" r="4.5"/><circle cx="240" cy="279.1" r="4.5"/><circle cx="220.3" cy="280" r="4.5"/><circle cx="200" cy="280.3" r="4.5"/><circle cx="179.7" cy="280" r="4.5"/><circle cx="160" cy="279.1" r="4.5"/><circle cx="141.5" cy="277.5" r="4.5"/><circle cx="124.8" cy="275.5" r="4.5"/><circle cx="110.3" cy="272.9" r="4.5"/><circle cx="98.4" cy="270" r="4.5"/><circle cx="89.6" cy="266.7" r="4.5"/><circle cx="84.1" cy="263.2" r="4.5"/></g>
+            </g>
+            <!-- t3 -->
+            <g class="tier tier--t3">
+            <path class="tier__body" d="M122,128 L122,190 A78,14 0 0 0 278,190 L278,128 Z"/>
+            <ellipse class="tier__top" cx="200" cy="128" rx="78" ry="14"/>
+            <path class="tier__icing" d="M122,128 A78,14 0 0 1 278,128 L278,136 L276,139.1 L274,140.4 L272,141.4 L270,144.8 L268,148.7 L266,150.7 L264,151.8 L262,152.3 L260,152.2 L258,151.2 L256,148.5 L254,146.1 L252,146.4 L250,146.7 L248,147 L246,147.3 L244,154.4 L242,157.7 L240,159.1 L238,159.4 L236,158.4 L234,155.7 L232,148.8 L230,148.9 L228,152.5 L226,156.6 L224,158.3 L222,158.9 L220,158.4 L218,156.6 L216,151.2 L214,149.8 L212,149.8 L210,149.9 L208,153.4 L206,155.6 L204,156.7 L202,157.2 L200,157.2 L198,156.8 L196,155.8 L194,153.9 L192,149.9 L190,149.9 L188,151.9 L186,154.8 L184,156.1 L182,156.6 L180,156.7 L178,156.4 L176,155.5 L174,153.8 L172,149.1 L170,148.9 L168,148.8 L166,148.6 L164,152.7 L162,155 L160,155.9 L158,156.1 L156,155.5 L154,154.3 L152,151.8 L150,146.7 L148,146.4 L146,146.1 L144,145.7 L142,151.9 L140,153.7 L138,154.2 L136,153.7 L134,152.2 L132,149.4 L130,142.2 L128,141.4 L126,140.4 L124,139.1 L122,136 Z"/>
+            <ellipse class="tier__shine" cx="191" cy="126" rx="48" ry="6"/>
+            <g class="pearls"><circle cx="276.6" cy="190.5" r="3.5"/><circle cx="271.3" cy="193.6" r="3.5"/><circle cx="262.1" cy="196.4" r="3.5"/><circle cx="249.7" cy="198.7" r="3.5"/><circle cx="234.7" cy="200.4" r="3.5"/><circle cx="217.8" cy="201.5" r="3.5"/><circle cx="200" cy="201.9" r="3.5"/><circle cx="182.2" cy="201.5" r="3.5"/><circle cx="165.3" cy="200.4" r="3.5"/><circle cx="150.3" cy="198.7" r="3.5"/><circle cx="137.9" cy="196.4" r="3.5"/><circle cx="128.7" cy="193.6" r="3.5"/><circle cx="123.4" cy="190.5" r="3.5"/></g>
+            </g>
+
+            <!-- Decorations -->
+            <text class="cake__name" x="200" y="268" text-anchor="middle">Sandra Nhung</text>
+            <!-- Sugar flowers -->
+            <g class="cake__flowers">
+                <use href="#flower" x="186" y="164" width="28" height="28" style="--c:var(--pink);--c2:#fff"/>
+                <use href="#flower" x="91" y="243" width="18" height="18" style="--c:#ffd1e3;--c2:#fff"/>
+                <use href="#flower" x="291" y="243" width="18" height="18" style="--c:#ffd1e3;--c2:#fff"/>
+                <use href="#flower" x="58" y="322" width="24" height="24" style="--c:#fff0f6;--c2:#ff9cc8"/>
+                <use href="#flower" x="118" y="330" width="24" height="24" style="--c:#e9b8ff;--c2:#fff"/>
+                <use href="#flower" x="188" y="333" width="24" height="24" style="--c:#fff0f6;--c2:#ff9cc8"/>
+                <use href="#flower" x="258" y="330" width="24" height="24" style="--c:#e9b8ff;--c2:#fff"/>
+                <use href="#flower" x="318" y="322" width="24" height="24" style="--c:#fff0f6;--c2:#ff9cc8"/>
+            </g>
+
+            <!-- Candles: back row first, front row last -->
+            <g class="candle" style="--i:0">
+                <rect x="146.5" y="89" width="11" height="40" rx="3" style="fill:var(--mint)"/>
+                <rect x="146.5" y="89" width="11" height="40" rx="3" fill="url(#p-stripes)"/>
+                <line class="candle__wick" x1="152" y1="89" x2="152" y2="83"/>
+                <g transform="translate(152 84)">
+                    <g class="flame">
+                        <circle class="flame__glow" cy="-10" r="26" fill="url(#g-flame-glow)"/>
+                        <path class="flame__outer" d="M0,-24 C6,-13 8,-7 8,-3 C8,2 4,5 0,5 C-4,5 -8,2 -8,-3 C-8,-7 -6,-13 0,-24 Z"/>
+                        <path class="flame__core" d="M0,-12 C3,-6 4,-3 4,-1 C4,2 2,3.5 0,3.5 C-2,3.5 -4,2 -4,-1 C-4,-3 -3,-6 0,-12 Z"/>
+                    </g>
+                    <g class="smoke"><circle cy="-4" r="3"/><circle cx="-2" cy="-4" r="4"/><circle cx="2" cy="-4" r="3.5"/></g>
+                </g>
+            </g>
+            <g class="candle" style="--i:1">
+                <rect x="194.5" y="90" width="11" height="40" rx="3" style="fill:var(--gold)"/>
+                <rect x="194.5" y="90" width="11" height="40" rx="3" fill="url(#p-stripes)"/>
+                <line class="candle__wick" x1="200" y1="90" x2="200" y2="84"/>
+                <g transform="translate(200 85)">
+                    <g class="flame">
+                        <circle class="flame__glow" cy="-10" r="26" fill="url(#g-flame-glow)"/>
+                        <path class="flame__outer" d="M0,-24 C6,-13 8,-7 8,-3 C8,2 4,5 0,5 C-4,5 -8,2 -8,-3 C-8,-7 -6,-13 0,-24 Z"/>
+                        <path class="flame__core" d="M0,-12 C3,-6 4,-3 4,-1 C4,2 2,3.5 0,3.5 C-2,3.5 -4,2 -4,-1 C-4,-3 -3,-6 0,-12 Z"/>
+                    </g>
+                    <g class="smoke"><circle cy="-4" r="3"/><circle cx="-2" cy="-4" r="4"/><circle cx="2" cy="-4" r="3.5"/></g>
+                </g>
+            </g>
+            <g class="candle" style="--i:2">
+                <rect x="242.5" y="89" width="11" height="40" rx="3" style="fill:var(--sky)"/>
+                <rect x="242.5" y="89" width="11" height="40" rx="3" fill="url(#p-stripes)"/>
+                <line class="candle__wick" x1="248" y1="89" x2="248" y2="83"/>
+                <g transform="translate(248 84)">
+                    <g class="flame">
+                        <circle class="flame__glow" cy="-10" r="26" fill="url(#g-flame-glow)"/>
+                        <path class="flame__outer" d="M0,-24 C6,-13 8,-7 8,-3 C8,2 4,5 0,5 C-4,5 -8,2 -8,-3 C-8,-7 -6,-13 0,-24 Z"/>
+                        <path class="flame__core" d="M0,-12 C3,-6 4,-3 4,-1 C4,2 2,3.5 0,3.5 C-2,3.5 -4,2 -4,-1 C-4,-3 -3,-6 0,-12 Z"/>
+                    </g>
+                    <g class="smoke"><circle cy="-4" r="3"/><circle cx="-2" cy="-4" r="4"/><circle cx="2" cy="-4" r="3.5"/></g>
+                </g>
+            </g>
+            <g class="candle" style="--i:3">
+                <rect x="170.5" y="94" width="11" height="40" rx="3" style="fill:var(--pink)"/>
+                <rect x="170.5" y="94" width="11" height="40" rx="3" fill="url(#p-stripes)"/>
+                <line class="candle__wick" x1="176" y1="94" x2="176" y2="88"/>
+                <g transform="translate(176 89)">
+                    <g class="flame">
+                        <circle class="flame__glow" cy="-10" r="26" fill="url(#g-flame-glow)"/>
+                        <path class="flame__outer" d="M0,-24 C6,-13 8,-7 8,-3 C8,2 4,5 0,5 C-4,5 -8,2 -8,-3 C-8,-7 -6,-13 0,-24 Z"/>
+                        <path class="flame__core" d="M0,-12 C3,-6 4,-3 4,-1 C4,2 2,3.5 0,3.5 C-2,3.5 -4,2 -4,-1 C-4,-3 -3,-6 0,-12 Z"/>
+                    </g>
+                    <g class="smoke"><circle cy="-4" r="3"/><circle cx="-2" cy="-4" r="4"/><circle cx="2" cy="-4" r="3.5"/></g>
+                </g>
+            </g>
+            <g class="candle" style="--i:4">
+                <rect x="218.5" y="94" width="11" height="40" rx="3" style="fill:var(--lavender)"/>
+                <rect x="218.5" y="94" width="11" height="40" rx="3" fill="url(#p-stripes)"/>
+                <line class="candle__wick" x1="224" y1="94" x2="224" y2="88"/>
+                <g transform="translate(224 89)">
+                    <g class="flame">
+                        <circle class="flame__glow" cy="-10" r="26" fill="url(#g-flame-glow)"/>
+                        <path class="flame__outer" d="M0,-24 C6,-13 8,-7 8,-3 C8,2 4,5 0,5 C-4,5 -8,2 -8,-3 C-8,-7 -6,-13 0,-24 Z"/>
+                        <path class="flame__core" d="M0,-12 C3,-6 4,-3 4,-1 C4,2 2,3.5 0,3.5 C-2,3.5 -4,2 -4,-1 C-4,-3 -3,-6 0,-12 Z"/>
+                    </g>
+                    <g class="smoke"><circle cy="-4" r="3"/><circle cx="-2" cy="-4" r="4"/><circle cx="2" cy="-4" r="3.5"/></g>
+                </g>
+            </g>
+        </svg>
+            <div class="countdown" aria-live="polite" hidden>
+                <span class="countdown__label">Ước đi nào...</span>
+                <span class="countdown__num">3</span>
+            </div>
+        </div>
+
+        <div class="actions">
+            <section class="wish" aria-live="polite" hidden>
+                <h2 class="wish__title">Điều ước đã nở thành hoa rồi!</h2>
+                <p class="wish__text">
+                    <span class="visually-hidden wish__full">Chúc chị Sandra Nhung tuổi mới luôn xinh đẹp, rạng rỡ như những đóa hoa. Mong chị luôn mạnh khỏe, bình an, công việc thuận lợi và hạnh phúc ngập tràn bên những người thương yêu. Sinh nhật thật vui và ngọt ngào nha chị!</span>
+                    <span class="wish__ghost" aria-hidden="true"></span>
+                    <span class="wish__typed" aria-hidden="true"></span>
+                </p>
+                <ul class="wish__chips" aria-label="Những điều chúc chị Sandra Nhung">
+                    <li class="chip" style="--i:0"><svg viewBox="-50 -50 100 100" aria-hidden="true"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg>Luôn xinh đẹp, rạng rỡ</li>
+                    <li class="chip" style="--i:1"><svg viewBox="-50 -50 100 100" aria-hidden="true"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg>Sức khỏe dồi dào</li>
+                    <li class="chip" style="--i:2"><svg viewBox="-50 -50 100 100" aria-hidden="true"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg>Công việc hanh thông</li>
+                    <li class="chip" style="--i:3"><svg viewBox="-50 -50 100 100" aria-hidden="true"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg>Hạnh phúc ngập tràn</li>
+                    <li class="chip" style="--i:4"><svg viewBox="-50 -50 100 100" aria-hidden="true"><use href="#flower" x="-50" y="-50" width="100" height="100"/></svg>Vạn sự như ý</li>
+                </ul>
+            </section>
+            <button class="btn" id="blow-button" type="button">
+                <svg class="btn__icon btn__icon--blow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/></svg>
+                <svg class="btn__icon btn__icon--light" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                <span class="btn__label">Thổi nến</span>
+            </button>
+            <p class="hint">Nhắm mắt, ước một điều thật đẹp rồi thổi nến nhé</p>
+            <p class="tip">Chạm vào những bông hoa hoặc bầu trời để có bất ngờ</p>
+        </div>
+    </main>
+
+    <button class="sound-toggle" type="button" aria-pressed="true" aria-label="Nhạc chúc mừng">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M11 5 6 9H2v6h4l5 4V5z"/>
+            <path class="sound-toggle__on" d="M15.5 8.5a5 5 0 0 1 0 7"/>
+            <path class="sound-toggle__on" d="M19 5a10 10 0 0 1 0 14"/>
+            <path class="sound-toggle__off" d="m16 9 6 6M22 9l-6 6"/>
+        </svg>
+    </button>
+</body>
+</html>
